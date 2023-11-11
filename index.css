@@ -47,7 +47,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   padding: var(--spacing-sm) 0 0 0;
-  background-color: var(--text-grey);
+  background-color: var(--bg-white);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -225,6 +225,7 @@ p {
   align-items: center;
   width: 100%;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  background-color: var(--purple-2);
 }
 
 .menu {
@@ -280,4 +281,18 @@ main {
 .hero-phone {
   height: calc(564px + 64px);
   transform: translate(32px, -32px);
+}
+
+/* PARTNERS SECTION STYLES */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: var(--spacing-lg) var(--spacing-md);
+  margin: var(--spacing-xl) 0;
+}
+
+.partners-grid img {
+  height: 60px;
+  place-self: center;
 }
