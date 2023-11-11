@@ -17,13 +17,15 @@
   --p-height: 26px;
   --secondray-text-size: 14px;
   --secondray-text-height: 18px;
-  --btn-size: 16px;
+  --btn-text-size: 16px;
 
   /* SPACING */
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 32px;
   --spacing-xl: 64px;
+
+  --standard-width: 1144px;
 
   /* COLORS */
   --text-dark: #000;
@@ -45,6 +47,11 @@ body {
   margin: 0;
   box-sizing: border-box;
   padding: var(--spacing-sm) 0 0 0;
+  background-color: var(--purple-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -136,7 +143,7 @@ p {
 .primary-btn,
 .secondary-btn {
   font-family: var(--body-font);
-  font-size: var(--btn-size);
+  font-size: var(--btn-text-size);
   font-weight: bold;
   letter-spacing: 1.25px;
   border-radius: 20px;
@@ -173,4 +180,40 @@ p {
 }
 .with-icon:hover > img {
   transform: translateX(4.5px);
+}
+
+/* NAVBAR */
+.navbar {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--standard-width);
+  padding: 0 var(--spacing-md);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu a {
+  margin: 0 var(--spacing-md);
+  color: var(--text-light);
+  font-weight: bold;
+}
+.menu a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.navbar-btn {
+  background-color: rgba(250, 250, 250, 0.25);
+}
+.navbar-btn:hover {
+  background-color: rgba(250, 250, 250, 0.5);
 }
