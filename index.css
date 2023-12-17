@@ -439,6 +439,8 @@ section:has(.section-container) {
 .global-section {
   background-color: var(--primary-accent);
   color: var(--text-light);
+  position: relative;
+  padding: calc(var(--spacing-xl) * 3) 0;
 }
 
 .global-section a {
@@ -463,4 +465,12 @@ section:has(.section-container) {
 .global-section .card-container .card h3 {
   border-left: 2px solid var(--blue-1);
   padding: 4px 0 0 var(--spacing-sm);
+}
+
+.global-section .globe-img {
+  max-width: 844px;
+  opacity: 0.25;
+  position: absolute;
+  top: 8%;
+  rotate: 5deg;
 }
