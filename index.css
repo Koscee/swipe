@@ -38,6 +38,9 @@
   --bg-white: #fff;
   --bg-light: #f7f9fc;
   --primary-btn-hover: #6d7a88;
+
+  /* BOX SHADOWS */
+  --standard-box-shadow: 0 2px 40px rgba(0, 0, 0, 0.15);
 }
 
 body {
@@ -47,7 +50,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   padding: var(--spacing-sm) 0 0 0;
-  background-color: var(--purple-1);
+  background-color: var(--bg-white);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,12 +68,10 @@ h1 {
 }
 h2 {
   font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: var(--h2-size);
+  font-weight: 600;
+  font-size: var(--h3-size);
   margin: 0;
   width: 100%;
-  letter-spacing: -0.25px;
-  line-height: var(--h2-height);
 }
 h3 {
   font-family: var(--heading-font);
@@ -119,6 +120,59 @@ p {
   margin: var(--spacing-md) 0;
 }
 
+/* LAYOUT CLASSES */
+.section-container {
+  max-width: var(--standard-width);
+  padding: 0 var(--spacing-md);
+}
+
+.two-column {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.two-column > .col-left,
+.two-column > .col-right {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+.two-column > .col-left {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 var(--spacing-md) 0 0;
+}
+.two-column > .col-right {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 0 0 var(--spacing-md);
+}
+
+/* CARD CLASSES */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) 0;
+}
+
+.card .icon {
+  height: 50px;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.card h3 {
+  font-weight: 600;
+  font-size: var(--h6-size);
+}
+
+/* TEXT CLASSES */
 .subtitle,
 .subtitle2 {
   font-family: var(--heading-font);
@@ -140,6 +194,7 @@ p {
   letter-spacing: 0.25px;
 }
 
+/* BUTTON CLASSES */
 .primary-btn,
 .secondary-btn {
   font-family: var(--body-font);
@@ -189,9 +244,8 @@ p {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: var(--standard-width);
-  padding: 0 var(--spacing-md);
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  background-color: var(--purple-2);
 }
 
 .menu {
@@ -216,4 +270,207 @@ p {
 }
 .navbar-btn:hover {
   background-color: rgba(250, 250, 250, 0.5);
+}
+
+/* MAIN */
+main {
+  margin: var(--spacing-xl) 0;
+  width: 100%;
+}
+section:has(.section-container) {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* HERO SECTION STYLES */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--spacing-md) 0;
+}
+
+.btn-container button:nth-child(2) {
+  margin: 0 0 0 var(--spacing-md);
+  color: var(--purple-2);
+}
+
+.hero p {
+  max-width: 480px;
+}
+
+.hero .hero-phone-container {
+  height: 564px;
+  align-items: flex-end;
+}
+.hero-phone {
+  height: calc(564px + 64px);
+  transform: translate(32px, -32px);
+}
+
+/* PARTNERS SECTION STYLES */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: var(--spacing-lg) var(--spacing-md);
+  margin: var(--spacing-xl) 0;
+}
+
+.partners-grid img {
+  height: 60px;
+  place-self: center;
+}
+
+/* UNIFIED PLATFORM SECTION STYLES */
+.unified-platform-section {
+  padding: var(--spacing-xl) 0;
+}
+
+.unified-platform-section h2 {
+  width: 50%;
+  margin-bottom: var(--spacing-sm);
+}
+
+.unified-platform-section .two-column p {
+  text-align: justify;
+}
+
+.unified-platform-section .primary-btn {
+  background-color: var(--purple-1);
+  margin: var(--spacing-md) 0;
+}
+.unified-platform-section .primary-btn:hover {
+  background-color: var(--primary-accent);
+}
+
+/* GRAPHIC PHOTOS GRID SECTION STYLES */
+.graphic-grid {
+  display: grid;
+  grid-template-areas:
+    'card slack slack'
+    'phone slack slack'
+    'phone dashboard dashboard';
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
+}
+
+#credit-card {
+  grid-area: card;
+  width: 100%;
+  box-shadow: var(--standard-box-shadow);
+}
+#slack-invoice {
+  grid-area: slack;
+  width: 100%;
+  box-shadow: var(--standard-box-shadow);
+}
+#phone {
+  grid-area: phone;
+  width: 100%;
+  box-shadow: var(--standard-box-shadow);
+}
+#dashboard {
+  grid-area: dashboard;
+  width: 100%;
+  box-shadow: var(--standard-box-shadow);
+}
+
+/* INTEGRATIONS SECTION STYLES */
+.integrations-section {
+  color: var(--text-light);
+  background-color: var(--primary-accent);
+}
+
+.integrations-section .primary-btn {
+  background-color: var(--blue-1);
+  color: var(--primary-accent);
+  margin: var(--spacing-md) 0 0 0;
+}
+.integrations-section .primary-btn:hover {
+  background-color: var(--bg-white);
+}
+
+.integrations-section .secondary-btn {
+  color: var(--blue-1);
+}
+
+.integrations-section .card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--spacing-xl) 0;
+}
+
+.integrations-section .card-container .card {
+  width: 50%;
+  margin: 0 var(--spacing-md) 0 0;
+  padding: var(--spacing-sm);
+  box-sizing: border-box;
+  box-shadow: var(--standard-box-shadow);
+}
+
+#api-code,
+#terminal-code {
+  max-width: 470px;
+  margin: 0 0 var(--spacing-md) 0;
+  border-radius: 20px;
+}
+
+/* WHY SWIPE SECTION STYLES */
+.why-swipe-section .card-container {
+  display: flex;
+  margin: var(--spacing-lg) 0;
+}
+
+.why-swipe-section .card-container .card {
+  width: 25%;
+  margin: 0 var(--spacing-sm) 0 0;
+  padding: 0 var(--spacing-sm) 0 0;
+  box-sizing: border-box;
+}
+
+.why-swipe-section .card-container .secondary-text {
+  color: var(--text-dark);
+}
+
+/* GLOBAL SECTION STYLES */
+.global-section {
+  background-color: var(--primary-accent);
+  color: var(--text-light);
+  position: relative;
+  padding: calc(var(--spacing-xl) * 3) 0;
+}
+
+.global-section a {
+  color: var(--blue-1);
+}
+.global-section a:hover {
+  color: var(--text-light);
+}
+
+.global-section .card-container {
+  display: flex;
+  margin: calc(var(--spacing-xl) * 2) 0;
+}
+
+.global-section .card-container .card {
+  width: 25%;
+  margin: 0 var(--spacing-md) 0 0;
+  padding: 0 var(--spacing-sm) 0 0;
+  box-sizing: border-box;
+}
+
+.global-section .card-container .card h3 {
+  border-left: 2px solid var(--blue-1);
+  padding: 4px 0 0 var(--spacing-sm);
+}
+
+.global-section .globe-img {
+  max-width: 844px;
+  opacity: 0.25;
+  position: absolute;
+  top: 8%;
+  rotate: 5deg;
 }
